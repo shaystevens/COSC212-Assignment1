@@ -2,13 +2,14 @@ var dogs = (function(){
     "use strict";
     var pub = {};
 
-    function showDogs(){
-        var section = document.createElement("section");
-        var dogsJson = $.getJSON( "212Assignment_1_Files/animals.json", function() {
-            console.log(dogsJson);
-
-        })
-
+    function showDogs() {
+        var keys;
+        fetch('animals.json').then(function(response){
+            return response.json();
+        }).then(function (obj){
+            keys = Object.keys(obj);
+            console.log(keys[0]);
+        });
     }
 
     pub.setup = function(){
