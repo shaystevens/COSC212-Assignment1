@@ -1,7 +1,7 @@
 var map = (function(){
     "use strict";
     var pub ={};
-        pub.setup = function(){
+    pub.setup = function(){
         map = L.map('map').setView([-45.875, 170.500], 15);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
