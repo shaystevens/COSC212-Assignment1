@@ -6,17 +6,19 @@
     font-style: normal;
     font-display: swap;
 }
+
 #adminAvatar{
     width: 50px;
     height: 50px;
-    margin-top: 10px;
-    margin-left: 1350px;
+    margin-top: 20px;
+    margin-right: 10px;
+    float: right;
 }
 h1 {
     text-align: left;
     font-family: "Good boy", sans-serif;
     margin-left: 10px;
-    margin-top: -75px;
+    margin-top: -10px;
     font-size: 100px;
     background: linear-gradient(to bottom,black 1%, darkgoldenrod, goldenrod, white 80%);
     -webkit-text-fill-color: transparent;
@@ -39,12 +41,13 @@ h2{
 }
 
 h3{
-    margin-left: 1345px;
+    margin-right: 5px;
     margin-top: -120px;
     font-family: sans-serif;
     background: linear-gradient(to bottom, darkgoldenrod, goldenrod);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+    float: right;
 }
 
 .ah2{
