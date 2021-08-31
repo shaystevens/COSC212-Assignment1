@@ -190,7 +190,7 @@ table {
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 2s;
+    transition: transform 1.2s;
     transform-style: preserve-3d;
 }
 
@@ -242,13 +242,45 @@ p{
     font-size: 20px;
     text-align: left;
     margin-left: 10px;
+    color: black;
+}
+#dog1{
+    -webkit-text-fill-color: goldenrod;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: darkgoldenrod;
+
 }
 
-.test{
-    font-size: 50px;
-    margin-top: 0;
+#dog2{
+    -webkit-text-fill-color: cornflowerblue;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: blue;
 }
 
-input{
-    size: 20px;
+#dog3{
+    -webkit-text-fill-color: orange;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #c36b00;
+
+}
+
+#dog4{
+    -webkit-text-fill-color: hotpink;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: deeppink;
+
+}
+
+#dog5{
+    -webkit-text-fill-color: greenyellow;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: yellowgreen;
+
+}
+
+#dog6{
+    -webkit-text-fill-color: red;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: darkred;
+
 }
