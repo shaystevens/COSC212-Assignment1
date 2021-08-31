@@ -72,7 +72,7 @@ h3{
     display: inline-block;
     align-items: center;
     justify-content: center;
-    padding: 16px 86px 18px 72px;
+    padding: 16px 55px 18px 55px;
     border-radius: 100px;
     opacity: 1 !important;
     font-weight: 600 !important;
@@ -90,7 +90,7 @@ h3{
     top: 0;
     width: 100%;
     height: 100px;
-    opacity: 45%;
+    opacity: 70%;
     background-color: black;
 }
 
@@ -103,6 +103,7 @@ header{
     width: 100%;
     height:150px;
     opacity: 85%;
+    z-index: -1;
 }
 
 #table{
@@ -117,4 +118,137 @@ ul#horizontalList li{
 
 body{
     background: linear-gradient(90deg, #CDB7F6 , #FFEFFF, #B19CD9);
+}
+
+ul {
+    list-style-type: none;
+    text-align: center;
+}
+.headerA{
+    background: linear-gradient(to bottom, lightgray, white 35%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    display: inline-block;
+    height: 50px;
+    font-size: 40px;
+    font-family: "Good boy", sans-serif;
+}
+
+.indexHeaderA{
+    background: linear-gradient(to bottom, lightgray, white 35%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    display: inline-block;
+    height: 80px;
+    font-size: 60px;
+    padding-right: 60px;
+    padding-top: 10px;
+    font-family: "Good boy", sans-serif;
+}
+
+li{
+    display: inline-block;
+    padding-top: 15px;
+    padding-right: 30px;
+}
+table {
+    margin-top: -90px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#dogs img{
+    height: 410px;
+    width: 270px;
+}
+
+#dogs{
+    height: 2500px;
+}
+
+.title{
+    margin-top: 200px;
+    margin-left: 100px;
+    margin-right: 300px;
+    font-size: 30px;
+    font-family: cursive, "Brush Script MT";
+}
+
+.flip-box {
+    background-color: transparent;
+    width: 270px;
+    height: 410px;
+    margin-left: 100px;
+    margin-top: -30px;
+    border: 1px solid black;
+    perspective: 1000px;
+}
+
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 2s;
+    transform-style: preserve-3d;
+}
+
+
+.card-inner.is-flipped {
+    transform: rotateY(180deg);
+}
+
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+
+.card-back {
+    color: white;
+    transform: rotateY(180deg);
+}
+
+#Husky{
+    background: linear-gradient(to right, cornflowerblue, deepskyblue, dodgerblue);
+}
+
+#Doge{
+    background: linear-gradient(to right, darkgoldenrod, goldenrod, palegoldenrod);
+}
+
+#Labrador{
+    background: linear-gradient(to right, yellowgreen, yellow, greenyellow);
+}
+
+#Dachshund{
+    background: linear-gradient(to right, red, tomato);
+}
+
+#Poodle{
+    background: linear-gradient(to left, hotpink, deeppink);
+}
+
+#Ronnie{
+    background: linear-gradient(to right, orange, darkorange, sandybrown);
+}
+
+p{
+    font-size: 20px;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.test{
+    font-size: 50px;
+    margin-top: 0;
+}
+
+input{
+    size: 20px;
 }

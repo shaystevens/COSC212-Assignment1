@@ -3,35 +3,51 @@
 		"dogs": [
 			{
 				"dogId": "DW-001",
-				"dogName": "Fido",
-				"dogType": "Poodle",
-				"dogSize": "Small",
+				"dogName": "Doge",
+				"dogType": "Shiba Inu",
+				"dogSize": "Medium",
 				"description": "Excellant lap dog, doesn't shed.",
-				"pricePerHour": "3.0"
+				"pricePerHour": "10.0"
 			},
 			{
 				"dogId": "DW-002",
-				"dogName": "Rover",
-				"dogType": "Springer Spanial",
-				"dogSize": "Medium",
+				"dogName": "Akira",
+				"dogType": "Siberian Husky",
+				"dogSize": "Large",
 				"description": "Very energetic, loves water. Good with kids",
 				"pricePerHour": "5.0"
 			},
 			{
 				"dogId": "DW-003",
-				"dogName": "Rex",
-				"dogType": "Retreiver",
+				"dogName": "Ronnie",
+				"dogType": "Rottweiler",
 				"dogSize": "Large",
 				"description": "Eats everything, very friendly. Slobbers a lot.",
 				"pricePerHour": "5.0"
 			},
 			{
 				"dogId": "DW-004",
-				"dogName": "Digby",
-				"dogType": "St. Bernard",
-				"dogSize": "Huge",
+				"dogName": "Daisy",
+				"dogType": "Poodle",
+				"dogSize": "Small",
+				"description": "Excellant horse replacement",
+				"pricePerHour": "5.0"
+			},
+			{
+				"dogId": "DW-005",
+				"dogName": "Ava",
+				"dogType": "Labrador Retriever",
+				"dogSize": "Medium",
 				"description": "Excellant horse replacement",
 				"pricePerHour": "10.0"
+			},
+			{
+				"dogId": "DW-006",
+				"dogName": "Snoopy",
+				"dogType": "Dachshund",
+				"dogSize": "Small",
+				"description": "Excellant horse replacement",
+				"pricePerHour": "5.0"
 			}
 
 		]
