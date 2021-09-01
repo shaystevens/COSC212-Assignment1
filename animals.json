@@ -6,48 +6,48 @@
 				"dogName": "Doge",
 				"dogType": "Shiba Inu",
 				"dogSize": "Medium",
-				"description": "Excellant lap dog, doesn't shed.",
-				"pricePerHour": "10.0"
+				"description": "Hi I'm Doge! I love memes and spend most of my time looking at CoinMarketCap",
+				"pricePerHour": "10"
 			},
 			{
 				"dogId": "DW-002",
 				"dogName": "Akira",
 				"dogType": "Siberian Husky",
 				"dogSize": "Large",
-				"description": "Very energetic, loves water. Good with kids",
-				"pricePerHour": "5.0"
+				"description": "Hi i'm Akira. I'm very energetic, and I'm good with kids",
+				"pricePerHour": "5"
 			},
 			{
 				"dogId": "DW-003",
 				"dogName": "Ronnie",
 				"dogType": "Rottweiler",
 				"dogSize": "Large",
-				"description": "Eats everything, very friendly. Slobbers a lot.",
-				"pricePerHour": "5.0"
+				"description": "Hi i'm Ronnie, I Eat everything and slobber a lot!!",
+				"pricePerHour": "10"
 			},
 			{
 				"dogId": "DW-004",
 				"dogName": "Daisy",
 				"dogType": "Poodle",
 				"dogSize": "Small",
-				"description": "Excellant horse replacement",
-				"pricePerHour": "5.0"
+				"description": "Hi i'm Daisy, I'm very shy but I love cuddling and watching movies",
+				"pricePerHour": "5"
 			},
 			{
 				"dogId": "DW-005",
 				"dogName": "Ava",
 				"dogType": "Labrador Retriever",
 				"dogSize": "Medium",
-				"description": "Excellant horse replacement",
-				"pricePerHour": "10.0"
+				"description": "Hi I'm Ava, I'm very protective and love going for a run",
+				"pricePerHour": "10"
 			},
 			{
 				"dogId": "DW-006",
 				"dogName": "Snoopy",
 				"dogType": "Dachshund",
 				"dogSize": "Small",
-				"description": "Excellant horse replacement",
-				"pricePerHour": "5.0"
+				"description": "Hi I'm Snoopy! I love going for walks and modelling for photos",
+				"pricePerHour": "5"
 			}
 
 		]
