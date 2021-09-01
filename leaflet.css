@@ -644,7 +644,9 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 100px;
-	width : 675px;
-	height: 550px;
+	width : 700px;
+	height: 600px;
+	border: 5px solid;
+	border-radius: 10px 10px 10px 10px;
 }
 

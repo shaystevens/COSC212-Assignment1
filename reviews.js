@@ -1,19 +1,25 @@
-let dogs = (function(){
+let reviews = (function(){
     "use strict";
     let pub = {};
 
-    function rotate(){
-        let card;
-        if($(this).hasClass('card-back')){
-            card = $(this).parent()[0];
-        }else{
-            card = $(this).parent().parent()[0];
+    function displayReviews(data){
+        let i, titleTag, authorTag, reviewTag, titleText, authorText, reviewText;
+        let tag = $("#reviewMain")[0]
+        for(i = 0; i < data.length; i++){
+            titleTag = document.createElement("h3");
+            titleText = document.createTextNode(data[i].title);
+            authorTag = document.createElement("p");
+            authorText = document.createTextNode(data[i].author)
+            reviewTag = document.createElement("p");
+            reviewText = document.createTextNode(data[i].reviewcontent);
+            titleTag.appendChild(titleText);
+            authorTag.appendChild(authorText);
+            reviewTag.appendChild(reviewText);
+            tag.append(titleTag);
+            tag.append(authorTag);
+            tag.append(reviewTag);
         }
-        card.classList.toggle('is-flipped');
-    }
-
-    function dogDescription(data){
-        let dogArray = data.animals.dogs;
+        /*
         let x, i, newTag, newText;
         for(x=0; x < dogArray.length; x++){
             let tag = $('.card-back')[x];
@@ -41,27 +47,18 @@ let dogs = (function(){
                 newTag.appendChild(newText);
                 tag.append(newTag);
             }
-       }
+        }*/
     }
 
     pub.setup = function(){
-        let jsonFile = "animals.json";
-        let dogArray = $("#dogs").find("img");
-        let array = $(".card-back");
-        let i;
-        for(i = 0; i < dogArray.length; i++){
-            dogArray[i].style.cursor = "pointer";
-            array[i].style.cursor = "pointer";
-            dogArray[i].addEventListener("click", rotate);
-            array[i].addEventListener("click", rotate);
-        }
+        let jsonFile = "reviews.json";
 
         $.ajax({
             type: "GET",
             url: jsonFile,
             cache: false,
             success: function(data) {
-                dogDescription(data);
+                displayReviews(data);
             }
         });
 
@@ -70,4 +67,4 @@ let dogs = (function(){
     return pub;
 
 }());
-$(document).ready(dogs.setup);
+$(document).ready(reviews.setup);
