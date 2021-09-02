@@ -64,7 +64,6 @@ let reviews = (function(){
                 displayReviews(data);
             }
         });
-
     };
 
     return pub;

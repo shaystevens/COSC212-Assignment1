@@ -4,70 +4,138 @@
     {
       "type": "Feature",
       "properties": {
-        "marker-color": "#7e7e7e",
+        "marker-color": "#CB2B3E",
         "marker-size": "medium",
         "marker-symbol": "",
-        "type": "campsite",
-        "name": "Car Rental Office"
+        "type": "Office",
+        "name": "Doge Rental Office"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          170.5153065919876,
-          -45.90540437585189
+          170.534486,
+          -45.881741
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "marker-color": "#7e7e7e",
+        "marker-color": "#FFD326",
         "marker-size": "medium",
-        "marker-symbol": "triangle",
-        "name": "St Clair Beach",
-        "type": "landmark"
+        "marker-symbol": "",
+        "name": "Wakari Dog Park",
+        "type": "Dog Park"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          170.49052566289902,
-          -45.911734850052895
+          170.4732462,
+          -45.855873
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "marker-color": "#7e7e7e",
+        "marker-color": "#FFD326",
         "marker-size": "medium",
         "marker-symbol": "",
-        "name": "Hot Water Pool",
-        "type": "landmark"
+        "name": "Shand Park",
+        "type": "Dog Park"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          170.48803120851517,
-          -45.913724171912456
+          170.4210106,
+          -45.9043256
         ]
       }
     },
     {
-          "type": "Feature",
-          "properties": {
-            "marker-color": "#7e7e7e",
-            "marker-size": "medium",
-            "marker-symbol": "",
-            "type": "restaurant",
-            "name": "Esplanade"
-          },
-          "geometry": {
-            "type": "Point",
-            "coordinates": [
-              170.49030303955075,
-              -45.911675131971606
-            ]
-          }
-        }
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#FFD326",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "type": "Dog Park",
+        "name": "East Taieri Dog Park"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.3274851,
+          -45.8911919
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#2A81CB",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "type": "Waking Track",
+        "name": "Frasers Gully Bush Walk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.4547271,
+          -45.8631022
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#2A81CB",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "type": "Waking Track",
+        "name": "Ross Creek Reservoir Forest Walk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.4961343,
+          -45.8449109
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+      "marker-color": "#2A81CB",
+      "marker-size": "medium",
+      "marker-symbol": "",
+      "type": "Waking Track",
+      "name": "Ross Creek Reservoir Forest Walk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.4961343,
+          -45.8449109
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#2A81CB",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "type": "Waking Track",
+        "name": "Highcliff Track"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.5954646,
+          -45.8953155
+        ]
+      }
+    }
   ]
 }
