@@ -9,12 +9,15 @@ let reviews = (function(){
             titleTag = document.createElement("h3");
             titleText = document.createTextNode(data[i].title);
             authorTag = document.createElement("p");
-            authorText = document.createTextNode(data[i].author)
+            authorText = document.createTextNode("Author: " + data[i].author)
             reviewTag = document.createElement("p");
             reviewText = document.createTextNode(data[i].reviewcontent);
             titleTag.appendChild(titleText);
+            titleTag.classList.add('review-header');
             authorTag.appendChild(authorText);
+            authorTag.classList.add('review-author');
             reviewTag.appendChild(reviewText);
+            reviewTag.classList.add('review-description');
             tag.append(titleTag);
             tag.append(authorTag);
             tag.append(reviewTag);

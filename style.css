@@ -41,7 +41,7 @@ h2{
 
 }
 
-h3{
+#adminHeader{
     margin-right: 5px;
     margin-top: -120px;
     font-family: sans-serif;
@@ -117,7 +117,7 @@ ul#horizontalList li{
 }
 
 body{
-    background: linear-gradient(90deg, #CDB7F6, #B19CD9);
+    background: linear-gradient(90deg, #CDB7F6 , #FFEFFF, #B19CD9);
 }
 
 ul {
@@ -293,10 +293,43 @@ p{
 
 #companyInfo{
     text-align: center;
-    margin-top: 125px;
+    margin-top: 50px;
     margin-left: 100px;
     margin-right: 100px;
     font-size: 40px;
     color: white;
 }
 
+#contactMain, #reviewMain{
+    padding: 10px;
+    margin: 150px auto 10px  auto;
+    border: 2px solid white;
+    border-radius: 10px 10px 10px 10px;
+    background: linear-gradient(90deg, #CDB7F6, #B19CD9);
+    color: inherit;
+    width: 1200px;
+
+}
+
+.review-header{
+    color: white;
+    font-size: 40px;
+    margin-left: 25px;
+    margin-top: 50px;
+    margin-bottom: 0;
+}
+
+.review-author{
+    color: white;
+    margin-left: 45px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.review-description{
+    color: white;
+    margin-left: 25px;
+    font-size: 30px;
+    margin-top: 50px;
+    margin-bottom: 200px;
+}
