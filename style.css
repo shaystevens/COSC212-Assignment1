@@ -66,23 +66,6 @@ h2{
     background-size: 100% 100%;
 }
 
-.buttonIndex{
-    margin: auto;
-    background: linear-gradient(to bottom, darkgoldenrod, goldenrod, white 80%);
-    display: inline-block;
-    align-items: center;
-    justify-content: center;
-    padding: 16px 55px 18px 55px;
-    border-radius: 100px;
-    opacity: 1 !important;
-    font-weight: 600 !important;
-    font-size: 32px !important;
-    color: aliceblue;
-    line-height: 170%;
-    letter-spacing: .01em;
-    cursor: pointer;
-}
-
 .header2{
     margin-left: -8px;
     z-index: 10000;
@@ -296,7 +279,7 @@ p{
     margin-top: 50px;
     margin-left: 100px;
     margin-right: 100px;
-    font-size: 40px;
+    font-size: 30px;
     color: white;
 }
 
@@ -331,4 +314,47 @@ p{
     font-size: 30px;
     margin-top: 50px;
     margin-bottom: 200px;
+}
+
+.contact-header{
+    color: white;
+    font-size: 40px;
+    margin-left: 100px;
+    margin-top: 50px;
+    margin-bottom: 0;
+}
+
+.contact-button{
+    margin-left: 300px;
+    margin-right: -125px;
+    background: linear-gradient(to bottom, darkgoldenrod, goldenrod, white 90%);
+    padding: 16px 30px 18px 30px;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 24px;
+    color: aliceblue;
+    line-height: 170%;
+    letter-spacing: .01em;
+    cursor: pointer;
+}
+
+.locations{
+    margin-left: 150px;
+    color: white;
+    font-size: 30px;
+    width: max-content;
+}
+
+.park-locations{
+    margin-left: 150px;
+    color: white;
+    font-size: 30px;
+    width: max-content;
+}
+
+.track-locations{
+    margin-left: 150px;
+    color: white;
+    font-size: 30px;
+    width: max-content;
 }

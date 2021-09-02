@@ -4,9 +4,7 @@
     {
       "type": "Feature",
       "properties": {
-        "marker-color": "#CB2B3E",
-        "marker-size": "medium",
-        "marker-symbol": "",
+        "color": "#CB2B3E",
         "type": "Office",
         "name": "Doge Rental Office"
       },
@@ -21,9 +19,7 @@
     {
       "type": "Feature",
       "properties": {
-        "marker-color": "#FFD326",
-        "marker-size": "medium",
-        "marker-symbol": "",
+        "color": "#FFD326",
         "name": "Wakari Dog Park",
         "type": "Dog Park"
       },
@@ -38,9 +34,7 @@
     {
       "type": "Feature",
       "properties": {
-        "marker-color": "#FFD326",
-        "marker-size": "medium",
-        "marker-symbol": "",
+        "color": "#FFD326",
         "name": "Shand Park",
         "type": "Dog Park"
       },
@@ -55,9 +49,7 @@
     {
       "type": "Feature",
       "properties": {
-        "marker-color": "#FFD326",
-        "marker-size": "medium",
-        "marker-symbol": "",
+        "color": "#FFD326",
         "type": "Dog Park",
         "name": "East Taieri Dog Park"
       },
@@ -72,9 +64,7 @@
     {
       "type": "Feature",
       "properties": {
-        "marker-color": "#2A81CB",
-        "marker-size": "medium",
-        "marker-symbol": "",
+        "color": "#2A81CB",
         "type": "Waking Track",
         "name": "Frasers Gully Bush Walk"
       },
@@ -89,9 +79,7 @@
     {
       "type": "Feature",
       "properties": {
-        "marker-color": "#2A81CB",
-        "marker-size": "medium",
-        "marker-symbol": "",
+        "color": "#2A81CB",
         "type": "Waking Track",
         "name": "Ross Creek Reservoir Forest Walk"
       },
@@ -106,26 +94,7 @@
     {
       "type": "Feature",
       "properties": {
-      "marker-color": "#2A81CB",
-      "marker-size": "medium",
-      "marker-symbol": "",
-      "type": "Waking Track",
-      "name": "Ross Creek Reservoir Forest Walk"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          170.4961343,
-          -45.8449109
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "marker-color": "#2A81CB",
-        "marker-size": "medium",
-        "marker-symbol": "",
+        "color": "#2A81CB",
         "type": "Waking Track",
         "name": "Highcliff Track"
       },

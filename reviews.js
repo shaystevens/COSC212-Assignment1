@@ -22,35 +22,6 @@ let reviews = (function(){
             tag.append(authorTag);
             tag.append(reviewTag);
         }
-        /*
-        let x, i, newTag, newText;
-        for(x=0; x < dogArray.length; x++){
-            let tag = $('.card-back')[x];
-            for(i=0; i < dogArray.length-1; i++){
-                newTag = document.createElement("p");
-
-                if(i === 0){
-                    newText = document.createTextNode("Name: " + dogArray[x].dogName);
-                }
-
-                if(i === 1){
-                    newText = document.createTextNode("Breed: " + dogArray[x].dogType);
-                }
-
-                if(i === 2){
-                    newText = document.createTextNode("Size: " + dogArray[x].dogSize);
-                }
-
-                if(i === 3){
-                    newText = document.createTextNode(dogArray[x].description);
-                }
-                if(i === 4){
-                    newText = document.createTextNode("Price: $" + dogArray[x].pricePerHour + " (per hour)");
-                }
-                newTag.appendChild(newText);
-                tag.append(newTag);
-            }
-        }*/
     }
 
     pub.setup = function(){
