@@ -198,7 +198,7 @@ table {
     transform: rotateY(180deg);
 }
 
-#Husky{
+#Akira{
     background: linear-gradient(to right, cornflowerblue, deepskyblue, dodgerblue);
 }
 
@@ -206,15 +206,15 @@ table {
     background: linear-gradient(to right, darkgoldenrod, goldenrod, palegoldenrod);
 }
 
-#Labrador{
+#Ava{
     background: linear-gradient(to right, yellowgreen, greenyellow);
 }
 
-#Dachshund{
+#Snoopy{
     background: linear-gradient(to right, red, tomato);
 }
 
-#Poodle{
+#Daisy{
     background: linear-gradient(to left, hotpink, deeppink);
 }
 
@@ -358,4 +358,35 @@ p{
     color: white;
     font-size: 30px;
     width: max-content;
+}
+
+#customAlert{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1100;
+}
+
+#box{
+    border-radius: 5px;
+    margin: 200px auto auto;
+    height: 150px;
+    width: 500px;
+    text-align: center;
+    box-shadow: 2px 2px 8px black;
+    background-color: #CDB7F6;
+}
+
+#heading{
+    background-color: #BF80FF;
+    color: white;
+    font-size: larger;
+    padding: 5px;
+}
+
+#closeButton{
+    margin-left: 400px;
+    margin-top: 20px;
 }

@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="dogs.js"></script>
+    <script src="booking.js"></script>
 </head>
 <body>
 <header class ="header2">
@@ -40,7 +41,7 @@
                         <div class="card-front">
                             <img src="images/pexels-antonio-florentini-803766.jpg" alt="Husky">
                         </div>
-                        <div class="card-back" id="Husky">
+                        <div class="card-back" id="Akira">
                         </div>
                     </div>
                 </div>
@@ -68,7 +69,7 @@
                         <div class="card-front">
                             <img src="images/pexels-goochie-poochie-grooming-3299899.jpg" alt="Poodle">
                         </div>
-                        <div class="card-back" id="Poodle">
+                        <div class="card-back" id="Daisy">
                         </div>
                     </div>
                 </div>
@@ -81,7 +82,7 @@
                         <div class="card-front">
                             <img src="images/pexels-suhail-suri-4381409.jpg" alt="Labrador">
                         </div>
-                        <div class="card-back" id="Labrador">
+                        <div class="card-back" id="Ava">
                         </div>
                     </div>
                 </div>
@@ -93,7 +94,7 @@
                         <div class="card-front">
                             <img src="images/pexels-anna-shvets-4588435.jpg" alt="Dachshund">
                         </div>
-                        <div class="card-back" id="Dachshund">
+                        <div class="card-back" id="Snoopy">
                         </div>
                     </div>
                 </div>
@@ -102,5 +103,14 @@
         </tr>
     </table>
 </main>
+<div id="customAlert" style="display: none">
+    <div id="box">
+        <div id="heading">A mesage from Doge Rentals</div>
+        <div id="content">
+            <p>You can only book three dogs at a time</p>
+            <input type="button" id="closeButton" value="Ok">
+        </div>
+    </div>
+</div>
 </body>
 </html>
