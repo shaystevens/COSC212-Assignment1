@@ -146,10 +146,6 @@ table {
     width: 270px;
 }
 
-#dogs{
-    height: 1500px;
-}
-
 .title{
     margin-top: 200px;
     margin-left: 100px;
@@ -228,6 +224,7 @@ p{
     margin-left: 10px;
     color: white;
 }
+
 #dog1{
     -webkit-text-fill-color: goldenrod;
     -webkit-text-stroke-width: 1px;
@@ -284,14 +281,14 @@ p{
     color: white;
 }
 
-#contactMain, #reviewMain{
+#contactMain, #reviewMain, #bookingForm{
     padding: 10px;
     margin: 150px auto 10px  auto;
     border: 2px solid white;
     border-radius: 10px 10px 10px 10px;
     background: linear-gradient(90deg, #CDB7F6, #B19CD9);
     color: inherit;
-    width: 1200px;
+    width: 1250px;
 }
 
 .review-header{
@@ -389,4 +386,9 @@ p{
 #closeButton{
     margin-left: 400px;
     margin-top: 20px;
+}
+
+#table2{
+    margin-top: 0;
+    border-spacing: 100px;
 }

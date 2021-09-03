@@ -8,6 +8,16 @@ let booking = (function(){
         dogArray = data.animals.dogs;
     }
 
+    function addDogImageToTable(i){
+        let dogImage = $('#dogs').find('img')[i].cloneNode(true);
+        let tableTag = document.createElement('td');
+        let tableRowTag = $('#imageTable');
+        dogImage.style.cursor = 'auto';
+        dogImage.border = '1px solid black';
+        tableTag.append(dogImage);
+        tableRowTag.append(tableTag);
+    }
+
     function showCustomAlert(){
         let customAlert = $('#customAlert')[0];
         customAlert.style.display = "block";
@@ -29,6 +39,8 @@ let booking = (function(){
                     if(storageArray[i] === 'DW-00' + '' + tagNum + ''){
                         buttonArray[tagNum-1].value = 'Booked!';
                         buttonArray[tagNum-1].disabled = true;
+                        $("#bookingForm")[0].style.display = "block";
+                        addDogImageToTable(tagNum-1);
                     }
                 }
             }
@@ -48,13 +60,13 @@ let booking = (function(){
                 let storageArray = JSON.parse(localStorage.getItem("dogId"));
                 storageArray.push(dogArray[i].dogId);
                 localStorage.setItem('dogId', JSON.stringify(storageArray));
-                button.value = "Booked!";
-                button.disabled = true;
             }else{
                 localStorage.setItem('dogId', JSON.stringify([dogArray[i].dogId]));
-                button.value = "Booked!";
-                button.disabled = true;
             }
+            button.value = "Booked!";
+            button.disabled = true;
+            $("#bookingForm")[0].style.display = "block";
+            addDogImageToTable(i)
         }else{
             showCustomAlert();
         }
