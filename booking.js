@@ -9,13 +9,35 @@ let booking = (function(){
     }
 
     function addDogImageToTable(i){
-        let dogImage = $('#dogs').find('img')[i].cloneNode(true);
+        let dogMain = $('#dogs');
+        let dogImage = dogMain.find('img')[i].cloneNode(true);
+        let dogTitle = dogMain.find('h4')[i].cloneNode(true);
         let tableTag = document.createElement('td');
         let tableRowTag = $('#imageTable');
+        dogTitle.style.margin = '0 0 0 -20px';
+        dogTitle.style.textAlign = 'center';
         dogImage.style.cursor = 'auto';
         dogImage.border = '1px solid black';
+        tableTag.append(dogTitle);
         tableTag.append(dogImage);
         tableRowTag.append(tableTag);
+    }
+
+    function cancelBooking(){
+        let buttonArray = $('.bookingButton');
+        let tableArray = $('#imageTable').find('td');
+        let i;
+
+        for(i=0; i < buttonArray.length; i++){
+            buttonArray[i].value = "Book me!";
+            buttonArray[i].disabled = false;
+        }
+
+        for(i=0; i < tableArray.length; i++){
+            tableArray[i].remove();
+        }
+        localStorage.removeItem('dogId');
+        $('#bookingForm')[0].style.display = 'none';
     }
 
     function showCustomAlert(){
@@ -73,6 +95,10 @@ let booking = (function(){
     }
 
     pub.setup = function (){
+        $( function() {
+            $( "#datepicker" ).datepicker();
+        } );
+        $('#cancelButton').click(cancelBooking);
         $('#closeButton').click(hideAlert);
         $.ajax({
             type: "GET",
