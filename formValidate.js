@@ -271,6 +271,7 @@ var formValidator = (function () {
         if (messages.length === 0) {
             // Checkout successful, clear the cart
             $('#dogs')[0].style.display = 'none';
+            $('#bookingSuccess')[0].style.display = 'block';
             let dateArray = date.split('/');
             let day = dateArray[1];
             let month = dateArray[0];

@@ -281,7 +281,7 @@ p{
     color: white;
 }
 
-#contactMain, #reviewMain, #bookingForm{
+#contactMain, #reviewMain, #bookingForm, #adminMain{
     padding: 10px;
     margin: 150px auto 10px  auto;
     border: 2px solid white;
@@ -322,19 +322,6 @@ p{
     margin-bottom: 0;
 }
 
-.contact-button{
-    margin-left: 300px;
-    margin-right: -125px;
-    background: linear-gradient(to bottom, darkgoldenrod, goldenrod, white 90%);
-    padding: 16px 30px 18px 30px;
-    border-radius: 100px;
-    font-weight: 600;
-    font-size: 24px;
-    color: aliceblue;
-    line-height: 170%;
-    letter-spacing: .01em;
-    cursor: pointer;
-}
 
 .locations{
     margin-left: 150px;
@@ -395,4 +382,8 @@ p{
 
 #datepicker{
     margin-left: 50px;
+}
+
+div{
+    text-align: center;
 }
