@@ -1,7 +1,21 @@
+/**
+ * Dogs function for Doge Rentals.
+ *
+ * Created by: Shay Stevens
+ */
+
+/**
+ * Module pattern
+ */
 let dogs = (function(){
     "use strict";
+
+    // Public interface
     let pub = {};
 
+    /**
+     * Function that rotates dog card by toggling the is flipped class.
+     */
     function rotate(){
         let card;
         if($(this).hasClass('card-back')){
@@ -12,6 +26,11 @@ let dogs = (function(){
         card.classList.toggle('is-flipped');
     }
 
+    /**
+     * Function that adds dog description to the back of the card.
+     *
+     * @param data The data from the json file
+     */
     function dogDescription(data){
         let dogArray = data.animals.dogs;
         let x, i, newTag, newText;
@@ -44,6 +63,12 @@ let dogs = (function(){
        }
     }
 
+    /**
+     * Setup function for dogs.
+     *
+     * Finds each img in dogs main and each tag with card-back class and adds a click event listener to it.
+     * Loads the data from the json file and passes it through dogDescription function.
+     */
     pub.setup = function(){
         let jsonFile = "animals.json";
         let dogArray = $("#dogs").find("img");
@@ -67,7 +92,9 @@ let dogs = (function(){
 
     };
 
+    // Expose public interface
     return pub;
 
 }());
+// onload event for dogs.
 $(document).ready(dogs.setup);

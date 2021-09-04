@@ -1,7 +1,22 @@
+/**
+ * Reviews function for Doge Rentals.
+ *
+ * Created by: Shay Stevens
+ */
+
+/**
+ * Module pattern
+ */
 let reviews = (function(){
     "use strict";
+    // Public interface
     let pub = {};
 
+    /**
+     * Displays all bookings from reviews.json file.
+     *
+     * @param data The data from the json file
+     */
     function displayReviews(data){
         let i, titleTag, authorTag, reviewTag, titleText, authorText, reviewText;
         let tag = $("#reviewMain")[0]
@@ -24,6 +39,11 @@ let reviews = (function(){
         }
     }
 
+    /**
+     * Setup function for reviews.
+     *
+     * Loads the data from the json file and passes it through displayReviews function.
+     */
     pub.setup = function(){
         let jsonFile = "reviews.json";
 
@@ -37,7 +57,10 @@ let reviews = (function(){
         });
     };
 
+    // Expose public interface
     return pub;
 
 }());
+
+// onload event for reviews.
 $(document).ready(reviews.setup);

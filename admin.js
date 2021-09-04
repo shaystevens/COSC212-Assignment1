@@ -1,14 +1,32 @@
+/**
+ * Admin function for Doge Rentals.
+ *
+ * Created by: Shay Stevens
+ */
+
+/**
+ * Module pattern
+ */
 let admin = (function(){
     "use strict";
+
+    // Public interface
     let pub = {};
     let jsonFile = "bookings.json";
 
+    /**
+     * Displays all bookings from bookings.json file.
+     *
+     * @param data The data from the json file
+     */
     function displayBookings(data){
         let i;
         let tag = $('#adminMain')[0];
         let bookings = data.bookings.booking;
         for(i=0; i < bookings.length; i++){
-            let bookingTag, bookingText, bookingName, nameText, bookingPickup, pickupText, j, dogIdTag, dogIdText, numHours, numHoursText;
+            let bookingTag, bookingText, bookingName, nameText, bookingPickup,
+                pickupText, j, dogIdTag, dogIdText, numHours, numHoursText;
+
             bookingTag = document.createElement('h3');
             bookingText = document.createTextNode('Booking' + ' ' + (i+1) + '');
             bookingTag.append(bookingText);
@@ -55,6 +73,11 @@ let admin = (function(){
 
     }
 
+    /**
+     * Setup function for admin.
+     *
+     * Loads the data from the json file and passes it through displayBookings function.
+     */
     pub.setup = function(){
         $.ajax({
             type: "GET",
@@ -66,7 +89,10 @@ let admin = (function(){
         });
     };
 
+    // Expose public interface
     return pub;
 
 }());
+
+//on load event for admin
 $(document).ready(admin.setup);

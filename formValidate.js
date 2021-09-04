@@ -1,7 +1,16 @@
-var formValidator = (function () {
+/**
+ * Form Validator function for Doge Rentals.
+ *
+ * Created by: Shay Stevens
+ */
+
+/**
+ * Module pattern
+ */
+let formValidator = (function () {
     "use strict";
 
-    var pub;
+    let pub;
 
     // Public interface
     pub = {};
@@ -25,7 +34,7 @@ var formValidator = (function () {
      * @return True if textValue contains only the characters 0-9, false otherwise.
      */
     function checkDigits(textValue) {
-        var pattern = /^[0-9]+$/;
+        let pattern = /^[0-9]+$/;
         return pattern.test(textValue);
     }
 
@@ -41,7 +50,7 @@ var formValidator = (function () {
      * @return True if textValue is an acceptable length, false otherwise.
      */
     function checkLength(textValue, minLength, maxLength) {
-        var length = textValue.length;
+        let length = textValue.length;
         if (maxLength === undefined) {
             maxLength = minLength;
         }
@@ -56,7 +65,7 @@ var formValidator = (function () {
      */
     function checkKeyIsDigit(event) {
         // Cross-browser key recognition - see http://stackoverflow.com/questions/1444477/keycode-and-charcode
-        var characterPressed, zero, nine;
+        let characterPressed, zero, nine;
         zero = "0";
         nine = "9";
         characterPressed = event.keyCode || event.which || event.charCode;
@@ -121,7 +130,7 @@ var formValidator = (function () {
      * @return True if cardValidation passes basic checks, false otherwise
      */
     function checkCreditCardDate(cardMonth, cardYear, messages) {
-        var today;
+        let today;
         today = new Date();
         cardMonth = parseInt(cardMonth, 10);
         cardYear = parseInt(cardYear, 10);
@@ -174,17 +183,29 @@ var formValidator = (function () {
         }
     }
 
+    /**
+     * Displays the error messages inside array s.
+     *
+     * @param s Array of error messages to be displayed
+     */
     function displayErrorMessages(s){
-        var eMessage, i;
+        let eMessage, i;
         eMessage = $("#bookingError");
         eMessage.text("");
         for(i=0; i<s.length; i++){
-            var li = document.createElement("li");
+            let li = document.createElement("li");
             li.innerText = s[i];
             eMessage.append(li);
         }
     }
 
+    /**
+     * Check that the name is not empty and that it has no digits.
+     * If it is push an error message to messages array.
+     *
+     * @param name The name to be checked
+     * @param messages Array of error messages (may be modified)
+     */
     function checkName(name, messages){
         if(!checkNotEmpty(name)){
             messages.push("You must enter a name");
@@ -195,6 +216,12 @@ var formValidator = (function () {
         }
     }
 
+    /**
+     * Check that the date is valid if it is not push error message to messages array.
+     *
+     * @param date The date to be checked
+     * @param messages Array of error messages (may be modified)
+     */
     function checkDate(date, messages){
         if(!checkNotEmpty(date)){
             messages.push("You must enter a date");
@@ -232,7 +259,7 @@ var formValidator = (function () {
      * @return False, because server-side form handling is not implemented. Eventually will return true on success and false otherwise.
      */
     function validateCheckout() {
-        var messages, cardType, cardNumber, cardMonth, cardYear, cardValidation, name, date, pickupTime, numHours;
+        let messages, cardType, cardNumber, cardMonth, cardYear, cardValidation, name, date, pickupTime, numHours;
 
         // Default assumption is that everything is good, and no messages
         messages = [];
@@ -241,11 +268,15 @@ var formValidator = (function () {
         name = $("#name").val();
         checkName(name, messages);
 
+        //date
         date = $('#datepicker').val();
         checkDate(date, messages);
 
+        //pickup time and number of hours
         pickupTime = $('#pickupTime').val();
         numHours = $('#numHours').val();
+
+        /* Check it doesn't exceed past closing time */
         if(parseInt(numHours)+parseInt(pickupTime) > 21){
             messages.push("Dogs must be back before closing time");
         }
@@ -269,7 +300,7 @@ var formValidator = (function () {
         checkCreditCardValidation(cardType, cardValidation, messages);
 
         if (messages.length === 0) {
-            // Checkout successful, clear the cart
+            // Set booking to local storage and hide page to display the thank you message
             $('#dogs')[0].style.display = 'none';
             $('#bookingSuccess')[0].style.display = 'block';
             let dateArray = date.split('/');
@@ -285,7 +316,7 @@ var formValidator = (function () {
             localStorage.setItem("name", name);
             localStorage.setItem("pickup", JSON.stringify({day: day, month: month, year: year, time: pickupTime + ":00" }));
             localStorage.setItem("numHours", numHours);
-            // Display a friendly message
+
 
         } else {
             // Report the error messages
@@ -298,7 +329,7 @@ var formValidator = (function () {
     }
 
     /**
-     * Setup function for sample validation.
+     * Setup function for form validator.
      *
      * Adds validation to the form on submission.
      * Note that if the validation fails (returns false) then the form is not submitted.
@@ -313,5 +344,5 @@ var formValidator = (function () {
     return pub;
 }());
 
-// The usual onload event handling to call SampleValidator.setup
+// onload event for form validator.
 $(document).ready(formValidator.setup);

@@ -1,13 +1,34 @@
+/**
+ * Booking function for Doge Rentals.
+ *
+ * Created by: Shay Stevens
+ */
+
+/**
+ * Module pattern
+ */
 let booking = (function(){
     "use strict"
+
+    // Public interface
     let pub = {};
     let jsonFile = "animals.json";
     let dogArray;
 
+    /**
+     * Sets the json file's dogs data to a global array.
+     *
+     * @param data The data from the json file
+     */
     function collectData(data){
         dogArray = data.animals.dogs;
     }
 
+    /**
+     * Adds dog image and name header to booking form table.
+     *
+     * @param i Index of the dog.
+     */
     function addDogImageToTable(i){
         let dogMain = $('#dogs');
         let dogImage = dogMain.find('img')[i].cloneNode(true);
@@ -23,6 +44,9 @@ let booking = (function(){
         tableRowTag.append(tableTag);
     }
 
+    /**
+     * Cancels the booking by enabling buttons, clearing local storage, and hiding form.
+     */
     function cancelBooking(){
         let buttonArray = $('.bookingButton');
         let tableArray = $('#imageTable').find('td');
@@ -40,16 +64,27 @@ let booking = (function(){
         $('#bookingForm')[0].style.display = 'none';
     }
 
+    /**
+     * Shows the custom alert by changing alert style from none to block.
+     */
     function showCustomAlert(){
         let customAlert = $('#customAlert')[0];
         customAlert.style.display = "block";
     }
 
+    /**
+     * Hides the custom alert by changing alert style from block to none.
+     */
     function hideAlert(){
         let customAlert = $('#customAlert')[0];
         customAlert.style.display = "none";
     }
 
+    /**
+     * Checks local storage if dogId is null or not.
+     * If it is not null then it sets up the page by showing the booking form,
+     * loading the images to the table and disabling the specific buttons.
+     */
     function checkLocalStorage(){
         if(localStorage.getItem("dogId") != null){
             let i,tagNum;
@@ -69,6 +104,9 @@ let booking = (function(){
         }
     }
 
+    /**
+     * Function that adds specific dogId to local storage.
+     */
     function addToBooking(){
         if(localStorage.getItem("dogId") == null || JSON.parse(localStorage.getItem("dogId")).length < 3){
             let i;
@@ -94,6 +132,13 @@ let booking = (function(){
         }
     }
 
+    /**
+     * Setup function for booking.
+     *
+     * Sets up jquery datepicker and adds click events to cancel Button, close button and booking button.
+     * Loads the data from the json file and passes it through collectData function.
+     * Checks local storage.
+     */
     pub.setup = function (){
         $( function() {
             $( "#datepicker" ).datepicker();
@@ -111,6 +156,10 @@ let booking = (function(){
         checkLocalStorage();
         $(".bookingButton").click(addToBooking);
     }
+
+    // Expose public interface
     return pub;
 }());
+
+//on load event for booking
 $(document).ready(booking.setup);

@@ -639,6 +639,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	border-right-color: #fff;
 	}
 
+/** Style for map */
 #map{
 	display: block;
 	margin-left: auto;

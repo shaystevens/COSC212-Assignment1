@@ -1,10 +1,27 @@
+/**
+ * Map function for Doge Rentals.
+ *
+ * Created by: Shay Stevens
+ */
+
+/**
+ * Module pattern
+ */
 let map = (function(){
     "use strict";
+    // Public interface
     let pub ={};
+
+    //json file
     let jsonFile = "POI.geojson";
+
+    // Global array to hold all park markers
     let parkArray = [];
+
+    // Global array to hold all track markers
     let trackArray = [];
 
+    /* Red marker */
     let redIcon = new L.Icon({
         iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
         shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -14,6 +31,7 @@ let map = (function(){
         shadowSize: [41, 41]
     });
 
+    /* Yellow marker */
     let yellowIcon = new L.Icon({
         iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-gold.png',
         shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -23,6 +41,7 @@ let map = (function(){
         shadowSize: [41, 41]
     });
 
+    /* Blue marker */
     let blueIcon = new L.Icon({
         iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png',
         shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -32,6 +51,11 @@ let map = (function(){
         shadowSize: [41, 41]
     });
 
+
+    /**
+     * Function that shows/hides markers on the map
+     * depending on which button is pressed.
+     */
     function showHide(){
         let i;
         let parkButton = $('#parkButton')[0];
@@ -79,6 +103,12 @@ let map = (function(){
         }
     }
 
+    /**
+     * Takes the data from the json file (data) and displays all
+     * points of interest inside the jsonfile.
+     *
+     * @param data data from json file.
+     */
     function displayPOI(data){
         let i, locationTag, locationText, parentTag, refTag;
         let dataArray = data.features;
@@ -101,6 +131,14 @@ let map = (function(){
         }
     }
 
+    /**
+     *
+     * Function that centres the map to a point.
+     *
+     * @param lat the latitude of the point
+     * @param long the longitude of point
+     * @returns {(function(): void)|*} returns void function that centres map to location
+     */
     function centreMap(lat, long) {
         return function () {
             let markerBounds;
@@ -109,6 +147,11 @@ let map = (function(){
         };
     }
 
+    /**
+     * Adds all markers to map from the data in json file.
+     *
+     * @param data The json file data
+     */
     function addMarkers(data){
         let i;
         let dataArray = data.features;
@@ -118,6 +161,11 @@ let map = (function(){
         }
     }
 
+    /**
+     * Adds all the park markers from the data.
+     *
+     * @param data The json file data
+     */
     function addParkMarkers(data){
         let i;
         let dataArray = data.features;
@@ -127,6 +175,11 @@ let map = (function(){
         }
     }
 
+    /**
+     * Adds all the track markers from the data.
+     *
+     * @param data The json file data
+     */
     function addTrackMarkers(data){
         let i;
         let dataArray = data.features;
@@ -136,6 +189,12 @@ let map = (function(){
         }
     }
 
+    /**
+     *  Adds a marker to the map and pushes to designated array by using coordinates and the marker color.
+     *
+     * @param markerColor The color of the marker
+     * @param coordinates The coordinates of the marker
+     */
     function addMarker(markerColor, coordinates){
         if(markerColor === "#CB2B3E"){
             L.marker([coordinates[1], coordinates[0]], {icon: redIcon}).addTo(map);
@@ -151,6 +210,9 @@ let map = (function(){
         }
     }
 
+    /**
+     *  Removes all the park markers from the map.
+     */
     function removeParkMarkers(){
         let i;
         for(i=0; i < parkArray.length; i++){
@@ -158,6 +220,9 @@ let map = (function(){
         }
     }
 
+    /**
+     *  Removes all the track markers from the map.
+     */
     function removeTrackMarkers(){
         let i;
         for(i=0; i < trackArray.length; i++){
@@ -165,6 +230,13 @@ let map = (function(){
         }
     }
 
+    /**
+     * Setup function for map.
+     *
+     * Initializes map and sets the view location to Office location.
+     * Gets the data from the json file and passes it to displayPOI and addMarkers functions.
+     * Adds click even to each contact button.
+     */
     pub.setup = function(){
         let i, buttons;
 
@@ -191,8 +263,10 @@ let map = (function(){
         }
     };
 
+    // Expose public interface
     return pub;
 
 }());
 
+// onload event for map.
 $(document).ready(map.setup);
