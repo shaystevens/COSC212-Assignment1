@@ -62,7 +62,7 @@ let map = (function(){
         let trackButton = $('#trackButton')[0];
         if($(this)[0] === parkButton){
             let parkLocations = $(".park-locations");
-            for (i = 0; i < parkLocations.length; i++) {
+            for (i = 0; i < parkLocations.length; i+=1) {
                 if (parkLocations[i].style.display === "none") {
                     parkLocations[i].style.display = "block";
                     parkButton.value = "Hide Parks";
@@ -71,18 +71,18 @@ let map = (function(){
                         url: jsonFile,
                         cache: false,
                         success: function(data) {
-                            addParkMarkers(data);
+                            pub.addParkMarkers(data);
                         }
                     });
                 } else {
                     parkLocations[i].style.display = "none";
                     parkButton.value = "Show Parks";
-                    removeParkMarkers();
+                    pub.removeParkMarkers();
                 }
             }
         }else{
             let trackLocations = $(".track-locations");
-            for (i = 0; i < trackLocations.length; i++) {
+            for (i = 0; i < trackLocations.length; i+=1) {
                 if (trackLocations[i].style.display === "none") {
                     trackLocations[i].style.display = "block";
                     trackButton.value = "Hide Tracks";
@@ -91,13 +91,13 @@ let map = (function(){
                         url: jsonFile,
                         cache: false,
                         success: function(data) {
-                            addTrackMarkers(data);
+                            pub.addTrackMarkers(data);
                         }
                     });
                 } else {
                     trackLocations[i].style.display = "none";
                     trackButton.value = "Show Tracks";
-                    removeTrackMarkers();
+                    pub.removeTrackMarkers();
                 }
             }
         }
@@ -110,9 +110,13 @@ let map = (function(){
      * @param data data from json file.
      */
     function displayPOI(data){
-        let i, locationTag, locationText, parentTag, refTag;
+        let i;
+        let locationTag;
+        let locationText;
+        let parentTag;
+        let refTag;
         let dataArray = data.features;
-        for(i=0; i < dataArray.length; i++){
+        for(i=0; i < dataArray.length; i+=1){
             locationTag = document.createElement("p");
             locationText = document.createTextNode(dataArray[i].properties.name);
             locationTag.appendChild(locationText);
@@ -121,13 +125,13 @@ let map = (function(){
             }else if(i > 0 && i < 4){
                 locationTag.classList.add('park-locations');
             }else{
-                locationTag.classList.add('track-locations')
+                locationTag.classList.add('track-locations');
             }
             parentTag = $("#contactMain")[0];
             refTag = $("#map")[0];
             parentTag.insertBefore(locationTag, refTag);
             locationTag.style.cursor = "pointer";
-            locationTag.onclick = centreMap(dataArray[i].geometry.coordinates[1], dataArray[i].geometry.coordinates[0]);
+            locationTag.onclick = pub.centreMap(dataArray[i].geometry.coordinates[1], dataArray[i].geometry.coordinates[0]);
         }
     }
 
@@ -139,55 +143,55 @@ let map = (function(){
      * @param long the longitude of point
      * @returns {(function(): void)|*} returns void function that centres map to location
      */
-    function centreMap(lat, long) {
+    pub.centreMap = function(lat, long) {
         return function () {
             let markerBounds;
             markerBounds = L.latLngBounds([{lat: lat, lng: long}]);
             map.fitBounds(markerBounds);
         };
-    }
+    };
 
     /**
      * Adds all markers to map from the data in json file.
      *
      * @param data The json file data
      */
-    function addMarkers(data){
+    pub.addMarkers = function(data){
         let i;
         let dataArray = data.features;
 
-        for(i=0; i< dataArray.length; i++){
-            addMarker(dataArray[i].properties.color, dataArray[i].geometry.coordinates)
+        for(i=0; i< dataArray.length; i+=1){
+            pub.addMarker(dataArray[i].properties.color, dataArray[i].geometry.coordinates);
         }
-    }
+    };
 
     /**
      * Adds all the park markers from the data.
      *
      * @param data The json file data
      */
-    function addParkMarkers(data){
+    pub.addParkMarkers = function(data){
         let i;
         let dataArray = data.features;
 
-        for(i=1; i< 4; i++){
-            addMarker(dataArray[i].properties.color, dataArray[i].geometry.coordinates)
+        for(i=1; i< 4; i+=1){
+            pub.addMarker(dataArray[i].properties.color, dataArray[i].geometry.coordinates);
         }
-    }
+    };
 
     /**
      * Adds all the track markers from the data.
      *
      * @param data The json file data
      */
-    function addTrackMarkers(data){
+    pub.addTrackMarkers = function(data){
         let i;
         let dataArray = data.features;
 
-        for(i=4; i < dataArray.length; i++){
-            addMarker(dataArray[i].properties.color, dataArray[i].geometry.coordinates);
+        for(i=4; i < dataArray.length; i+=1){
+            pub.addMarker(dataArray[i].properties.color, dataArray[i].geometry.coordinates);
         }
-    }
+    };
 
     /**
      *  Adds a marker to the map and pushes to designated array by using coordinates and the marker color.
@@ -195,7 +199,7 @@ let map = (function(){
      * @param markerColor The color of the marker
      * @param coordinates The coordinates of the marker
      */
-    function addMarker(markerColor, coordinates){
+    pub.addMarker = function(markerColor, coordinates){
         if(markerColor === "#CB2B3E"){
             L.marker([coordinates[1], coordinates[0]], {icon: redIcon}).addTo(map);
         }
@@ -208,27 +212,27 @@ let map = (function(){
         if(markerColor === "#2A81CB"){
             trackArray.push(L.marker([coordinates[1], coordinates[0]], {icon: blueIcon}).addTo(map));
         }
-    }
+    };
 
     /**
      *  Removes all the park markers from the map.
      */
-    function removeParkMarkers(){
+    pub.removeParkMarkers = function(){
         let i;
-        for(i=0; i < parkArray.length; i++){
+        for(i=0; i < parkArray.length; i+=1){
             map.removeLayer(parkArray[i]);
         }
-    }
+    };
 
     /**
      *  Removes all the track markers from the map.
      */
-    function removeTrackMarkers(){
+    pub.removeTrackMarkers = function(){
         let i;
-        for(i=0; i < trackArray.length; i++){
+        for(i=0; i < trackArray.length; i+=1){
             map.removeLayer(trackArray[i]);
         }
-    }
+    };
 
     /**
      * Setup function for map.
@@ -238,7 +242,8 @@ let map = (function(){
      * Adds click even to each contact button.
      */
     pub.setup = function(){
-        let i, buttons;
+        let i;
+        let buttons;
 
         map = L.map('map').setView([-45.881741, 170.534486], 16);
 
@@ -253,12 +258,12 @@ let map = (function(){
             cache: false,
             success: function(data) {
                 displayPOI(data);
-                addMarkers(data);
+                pub.addMarkers(data);
             }
         });
 
         buttons = $(".contact-button");
-        for(i=0; i < buttons.length; i++){
+        for(i=0; i < buttons.length; i+=1){
             buttons[i].onclick = showHide;
         }
     };

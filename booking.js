@@ -8,10 +8,11 @@
  * Module pattern
  */
 let booking = (function(){
-    "use strict"
+    "use strict";
 
     // Public interface
     let pub = {};
+
     let jsonFile = "animals.json";
     let dogArray;
 
@@ -52,12 +53,12 @@ let booking = (function(){
         let tableArray = $('#imageTable').find('td');
         let i;
 
-        for(i=0; i < buttonArray.length; i++){
+        for(i=0; i < buttonArray.length; i+=1){
             buttonArray[i].value = "Book me!";
             buttonArray[i].disabled = false;
         }
 
-        for(i=0; i < tableArray.length; i++){
+        for(i=0; i < tableArray.length; i+=1){
             tableArray[i].remove();
         }
         localStorage.removeItem('dogId');
@@ -86,13 +87,14 @@ let booking = (function(){
      * loading the images to the table and disabling the specific buttons.
      */
     function checkLocalStorage(){
-        if(localStorage.getItem("dogId") != null){
-            let i,tagNum;
+        if(localStorage.getItem("dogId") !== null){
+            let i;
+            let tagNum;
             let storageArray = JSON.parse(localStorage.getItem("dogId"));
             let buttonArray = $(".bookingButton");
 
-            for(tagNum = 1; tagNum < 7; tagNum++){
-                for(i=0; i < storageArray.length; i++){
+            for(tagNum = 1; tagNum < 7; tagNum+=1){
+                for(i=0; i < storageArray.length; i+=1){
                     if(storageArray[i] === 'DW-00' + '' + tagNum + ''){
                         buttonArray[tagNum-1].value = 'Booked!';
                         buttonArray[tagNum-1].disabled = true;
@@ -108,15 +110,17 @@ let booking = (function(){
      * Function that adds specific dogId to local storage.
      */
     function addToBooking(){
-        if(localStorage.getItem("dogId") == null || JSON.parse(localStorage.getItem("dogId")).length < 3){
+        if(localStorage.getItem("dogId") === null || JSON.parse(localStorage.getItem("dogId")).length < 3){
             let i;
             let button = $(this)[0];
             let dogId = $(this).siblings()[1].getElementsByClassName('card-back')[0].id;
-            for(i = 0; i < dogArray.length; i++){
-                if(dogId === dogArray[i].dogName) break;
+            for(i = 0; i < dogArray.length; i+=1){
+                if(dogId === dogArray[i].dogName){
+                    break;
+                }
             }
 
-            if(localStorage.getItem("dogId") != null){
+            if(localStorage.getItem("dogId") !== null){
                 let storageArray = JSON.parse(localStorage.getItem("dogId"));
                 storageArray.push(dogArray[i].dogId);
                 localStorage.setItem('dogId', JSON.stringify(storageArray));
@@ -126,7 +130,7 @@ let booking = (function(){
             button.value = "Booked!";
             button.disabled = true;
             $("#bookingForm")[0].style.display = "block";
-            addDogImageToTable(i)
+            addDogImageToTable(i);
         }else{
             showCustomAlert();
         }
@@ -155,7 +159,7 @@ let booking = (function(){
         });
         checkLocalStorage();
         $(".bookingButton").click(addToBooking);
-    }
+    };
 
     // Expose public interface
     return pub;

@@ -65,7 +65,9 @@ let formValidator = (function () {
      */
     function checkKeyIsDigit(event) {
         // Cross-browser key recognition - see http://stackoverflow.com/questions/1444477/keycode-and-charcode
-        let characterPressed, zero, nine;
+        let characterPressed;
+        let zero;
+        let nine;
         zero = "0";
         nine = "9";
         characterPressed = event.keyCode || event.which || event.charCode;
@@ -189,10 +191,11 @@ let formValidator = (function () {
      * @param s Array of error messages to be displayed
      */
     function displayErrorMessages(s){
-        let eMessage, i;
+        let eMessage;
+        let i;
         eMessage = $("#bookingError");
         eMessage.text("");
-        for(i=0; i<s.length; i++){
+        for(i=0; i<s.length; i+=1){
             let li = document.createElement("li");
             li.innerText = s[i];
             eMessage.append(li);
@@ -226,7 +229,7 @@ let formValidator = (function () {
         if(!checkNotEmpty(date)){
             messages.push("You must enter a date");
         }else{
-            let currentDate = new Date;
+            let currentDate = new Date();
             let dateArray = date.split('/');
             if(currentDate.getFullYear() > parseInt(dateArray[2])){
                 messages.push("You must enter a valid date");
@@ -242,7 +245,6 @@ let formValidator = (function () {
                     if(testDate[0] === '0'){
                         testDate = testDate[1];
                     }
-                    console.log(testDate);
                     if (currentDate.getDate() > parseInt(testDate)) {
                         messages.push("You must enter a valid date");
                     }
@@ -259,7 +261,16 @@ let formValidator = (function () {
      * @return False, because server-side form handling is not implemented. Eventually will return true on success and false otherwise.
      */
     function validateCheckout() {
-        let messages, cardType, cardNumber, cardMonth, cardYear, cardValidation, name, date, pickupTime, numHours;
+        let messages;
+        let cardType;
+        let cardNumber;
+        let cardMonth;
+        let cardYear;
+        let cardValidation;
+        let name;
+        let date;
+        let pickupTime;
+        let numHours;
 
         // Default assumption is that everything is good, and no messages
         messages = [];

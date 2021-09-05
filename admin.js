@@ -23,9 +23,18 @@ let admin = (function(){
         let i;
         let tag = $('#adminMain')[0];
         let bookings = data.bookings.booking;
-        for(i=0; i < bookings.length; i++){
-            let bookingTag, bookingText, bookingName, nameText, bookingPickup,
-                pickupText, j, dogIdTag, dogIdText, numHours, numHoursText;
+        for(i=0; i < bookings.length; i+=1){
+            let bookingTag;
+            let bookingText;
+            let bookingName;
+            let nameText;
+            let bookingPickup;
+            let pickupText;
+            let j;
+            let dogIdTag;
+            let dogIdText;
+            let numHours;
+            let numHoursText;
 
             bookingTag = document.createElement('h3');
             bookingText = document.createTextNode('Booking' + ' ' + (i+1) + '');
@@ -47,7 +56,7 @@ let admin = (function(){
             }else{
                 dogIdTag.append('Dog: ');
             }
-            for(j=0; j < bookings[i].dogId.length; j++){
+            for(j=0; j < bookings[i].dogId.length; j+=1){
                 dogIdText = document.createTextNode(bookings[i].dogId[j] + " ");
                 dogIdTag.append(dogIdText);
             }

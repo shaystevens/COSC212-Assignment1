@@ -33,10 +33,13 @@ let dogs = (function(){
      */
     function dogDescription(data){
         let dogArray = data.animals.dogs;
-        let x, i, newTag, newText;
-        for(x=0; x < dogArray.length; x++){
+        let x;
+        let i;
+        let newTag;
+        let newText;
+        for(x=0; x < dogArray.length; x+=1){
             let tag = $('.card-back')[x];
-            for(i=0; i < dogArray.length-1; i++){
+            for(i=0; i < dogArray.length-1; i+=1){
                 newTag = document.createElement("p");
 
                 if(i === 0){
@@ -74,7 +77,7 @@ let dogs = (function(){
         let dogArray = $("#dogs").find("img");
         let array = $(".card-back");
         let i;
-        for(i = 0; i < dogArray.length; i++){
+        for(i = 0; i < dogArray.length; i+=1){
             dogArray[i].style.cursor = "pointer";
             array[i].style.cursor = "pointer";
             dogArray[i].addEventListener("click", rotate);
