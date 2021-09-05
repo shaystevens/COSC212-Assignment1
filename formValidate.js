@@ -324,11 +324,11 @@ let formValidator = (function () {
             if(day[0] === '0'){
                 day = day[1];
             }
-            localStorage.setItem("name", name);
-            localStorage.setItem("pickup", JSON.stringify({day: day, month: month, year: year, time: pickupTime + ":00" }));
-            localStorage.setItem("numHours", numHours);
+            localStorage.setItem("booking", JSON.stringify([{dogId: JSON.parse(localStorage.getItem("dogId")),
+            name: name, pickup: {day: day, month: month, year: year, time: pickupTime + ":00" },
+            numHours: numHours}]));
 
-
+            localStorage.removeItem("dogId");
         } else {
             // Report the error messages
             displayErrorMessages(messages);
